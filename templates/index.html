@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoJudge - ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico|Arimo|Hind:300|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<div class="login">
+    <h1>Predict Programming Problem Difficulty</h1>
+    
+    <form action="{{url_for('predict')}}" method="post">
+        
+        <textarea name="Problem description" placeholder="Paste problem description here..." required="required" rows="5"></textarea>
+        <textarea name="Input description" placeholder="Describe the input format..." required="required" rows="3"></textarea>
+        <textarea name="Output description" placeholder="Describe the output format..." required="required" rows="3"></textarea>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Difficulty</button>
+    </form>
+</div>
+
+<div class="results-container" style="text-align: center; margin-top: 20px;">
+   
+    <h1 id="complexity_pred">{{ c_preds }}</h1>
+    
+    <h1 id="score_pred">{{ s_preds }}</h1>
+    
+</div>
+
+</body>
+</html>
