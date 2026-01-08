@@ -1,6 +1,6 @@
 AutoJudge is an intelligent data science system developed to automate the assessment of programming problem difficulty. In competitive programming, problems are typically categorized (e.g., Easy, Medium, Hard) and assigned numerical scores based on human judgment or historical submission data. This project replaces that manual process with a machine learning pipeline that predicts difficulty levels using only the textual content of a problem.
 
-Here is the steps i did in the projet:
+Here are the steps i did in the projet:
 
 The technical approach begins with an extensive Data Preprocessing and Cleaning phase. Because computers cannot interpret raw text, the system merges separate fields—title, description, input specifications, and output requirements—into a single block of text to provide the model with a complete context of the problem’s logic. The text is then standardized by converting all characters to lowercase and removing punctuation and extra whitespace using Python's regular expression library. This ensures that the model treats similar words identically and focuses on the core algorithmic terminology.
 
@@ -9,5 +9,6 @@ For the Feature Extraction stage, the project employs TF-IDF (Term Frequency-Inv
 The performance of these models reveals significant insights into the nature of programming problems. The classification model achieved an overall accuracy of 53%, performing exceptionally well at identifying "Hard" problems with a Recall rate of 82%. This suggests that difficult problems contain very specific, high-level keywords that the model can easily detect. On the numerical side, the regression model achieved a Mean Absolute Error (MAE) of 1.72, indicating that its score predictions are highly consistent and typically very close to the actual labels.
 
 Finally, the project is made accessible through a functional Web Interface built using the Flask framework. This interface allows users to paste new problem details into a web form, which the backend then processes using the saved models to provide instant results. By integrating complex natural language processing with a simple user interface, AutoJudge demonstrates a practical application of AI in the field of technical education and competitive programming, offering a scalable solution for organizing large-scale problem sets automatically.
+
 
 In conclusion i employed a supervised learning approach using Natural Language Processing (NLP). By converting raw problem descriptions into numerical vectors using TF-IDF, then i trained Random Forest models to identify complex patterns in programming problems. The system was then integrated into a Flask web application to provide a real-time difficulty assessment tool for developers.
