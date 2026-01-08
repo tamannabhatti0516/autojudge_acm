@@ -1,7 +1,7 @@
 import pandas as pd
 import joblib
 
-problems = pd.read_json(r"C:\Users\Dell\Downloads\problems_data.jsonl", lines=True)
+problems = pd.read_json('/workspaces/autojudge_acm/problems_data.jsonl', lines=True)
 problems = problems[["title","description","input_description","output_description","problem_class","problem_score"]]
 
 
